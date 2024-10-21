@@ -9,7 +9,7 @@ import java.sql.Statement;
 public class CSVWrite {
     public static void main(String[] args) {
         Connection connection = databaseConnection.connect();
-        String csvFile = "/Users/confluxsys/Desktop/csv/file4(7TH OCT).csv"; // Specify your output CSV file path
+        String csvFile = "Specify_path.csv"; // Specify your output CSV file path
         try (FileWriter writer = new FileWriter(csvFile);
              CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT.withHeader("Account Id","Account Login","Status","$metaType","Groups.Group"))) {
             if (connection != null) {
