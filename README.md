@@ -1,3 +1,3 @@
 # learner_git
-Has some codes
-In dbCon branch, add dependency accordingly
+Has some codes,
+In dbCon, add dependency accordingly
