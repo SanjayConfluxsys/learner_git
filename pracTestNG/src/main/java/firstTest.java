@@ -11,9 +11,9 @@ public class firstTest {
     @BeforeClass
     public void setup(){
     //define connection
-        String URL = "jdbc:postgresql://localhost:5432/PracDbOperations";
-        String USERNAME = "postgres";
-        String PASSWORD = "confluxsys";
+        String URL = "jdbc:postgresql://localhost:5432/db_name";
+        String USERNAME = "dummy";
+        String PASSWORD = "password";
         //call db method
         connection = dbCon.connect(URL,USERNAME,PASSWORD);
         try{
