@@ -9,7 +9,7 @@ public class SupportTicket {
     private Long id;
 
     private String description;
-    private String status;  // Example statuses: "Open", "Assigned", "Closed"
+    private String status;  // Example: "Open", "Assigned", "Closed"
 
     // Join the customer with a foreign key
     @ManyToOne

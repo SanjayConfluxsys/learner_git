@@ -18,4 +18,12 @@ public interface SupportTicketRepository extends JpaRepository<SupportTicket, Lo
             "JOIN st.customer c " +
             "JOIN st.employee e")
     List<TicketInfoDTO> getTicketInfo();
+
+//
+//
+//    @Query("SELECT new com.example.CustomerSupportSystem.DTO.TicketInfoDTO(c.customerName, st.description, e.name, st.status) " +
+//            "FROM SupportTicket st " +
+//            "JOIN st.customer c " +
+//            "JOIN st.employee e")
+//    List<TicketInfoDTO> getTicketInfojson();
 }
