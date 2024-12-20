@@ -5,10 +5,13 @@ import com.example.CustomerSupportSystem.DTO.TicketInfoDTO;
 import com.example.CustomerSupportSystem.model.Customer;
 import com.example.CustomerSupportSystem.model.Employee;
 import com.example.CustomerSupportSystem.model.SupportTicket;
+import com.example.CustomerSupportSystem.model.TicketSummary;
 import com.example.CustomerSupportSystem.repository.CustomerRepository;
 import com.example.CustomerSupportSystem.repository.EmployeeRepository;
 import com.example.CustomerSupportSystem.repository.SupportTicketRepository;
+import com.example.CustomerSupportSystem.repository.TicketSummaryRepository;
 import com.example.CustomerSupportSystem.service.SupportTicketService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import jakarta.transaction.Transactional;
@@ -28,6 +31,12 @@ public class SupportTicketServiceImpl implements SupportTicketService {
 
     @Autowired
     private EmployeeRepository employeeRepository;
+
+    @Autowired
+    private TicketSummaryRepository ticketSummaryRepository;
+
+    @Autowired
+    private ObjectMapper objectMapper;
 
     @Override
     @Transactional
@@ -67,7 +76,13 @@ public class SupportTicketServiceImpl implements SupportTicketService {
         ticket.setEmployee(randomEmployee);  // Assign the random employee
 
         // Save the ticket to the database
-        return supportTicketRepository.save(ticket);
+        SupportTicket savedTicket = supportTicketRepository.save(ticket);
+
+        //now generate and save the ticket summary
+        generateAndSaveTicketSummary(customer,savedTicket);
+        return savedTicket;
+
+        //        return supportTicketRepository.save(ticket);
     }
 
     @Override
@@ -103,6 +118,43 @@ public class SupportTicketServiceImpl implements SupportTicketService {
     public List<TicketInfoDTO> getTicketInfo() {
         return supportTicketRepository.getTicketInfo();
     }
+
+    @Override
+    public void generateAndSaveTicketSummary(Customer customer, SupportTicket supportTicket) {
+
+    }
+
+//
+//    // New method to generate and save ticket summary in JSON format
+//    @Override
+//    public void generateAndSaveTicketSummary(Customer customer, SupportTicket ticket) {
+//        try {
+//            // Prepare TicketInfoDTO (simplified version of what you want to store in JSON)
+//            TicketInfoDTO ticketInfoDTO = new TicketInfoDTO(
+//                    customer.getCustomerName(),
+//                    ticket.getDescription(),
+//                    ticket.getEmployee() != null ? ticket.getEmployee().getName() : "Unassigned",
+//                    ticket.getStatus()
+//            );
+//
+//            // Convert TicketInfoDTO to JSON string using Jackson ObjectMapper
+//            String ticketSummaryJson = objectMapper.writeValueAsString(ticketInfoDTO);
+//
+//            // Create a new TicketSummary entity and store the data
+//            TicketSummary ticketSummary = new TicketSummary();
+//            ticketSummary.setCustomerId(customer.getId());
+//            ticketSummary.setCustomerName(customer.getCustomerName());
+//            ticketSummary.setTicketSummaryJson(ticketSummaryJson);
+//            ticketSummary.setCreatedAt(System.currentTimeMillis());  // Store the current timestamp
+//
+//            // Save the summary to the TicketSummary table
+//            ticketSummaryRepository.save(ticketSummary);
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();  // Handle any exceptions during JSON conversion or saving
+//        }
+//    }
+
 
 
 }

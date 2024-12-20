@@ -2,6 +2,7 @@ package com.example.CustomerSupportSystem.service;
 
 import com.example.CustomerSupportSystem.DTO.SupportTicketDTO;
 import com.example.CustomerSupportSystem.DTO.TicketInfoDTO;
+import com.example.CustomerSupportSystem.model.Customer;
 import com.example.CustomerSupportSystem.model.SupportTicket;
 
 import java.util.List;
@@ -14,6 +15,8 @@ public interface SupportTicketService {
 
         // Method to get the list of ticket details
         List<TicketInfoDTO> getTicketInfo();
+
+        void generateAndSaveTicketSummary(Customer customer, SupportTicket supportTicket);
 
 
 
