@@ -1,5 +1,5 @@
 # Group & Entitlement Information
-Group,Entitlement Display Name,Entitlement Description,Privileged Entitlement?,Requestable?,Certifiable?,Entitlement Approver User,Entitlement Certifier User,Entitlement Fulfiller User,Entitlement Approver Role,Entitlement Certifier Role,Entitlement Fulfiller Role,Entitlement Number
+Group,Entitlement Display Name,Entitlement Description,Privileged Entitlement,Requestable,Certifiable,Entitlement Approver User,Entitlement Certifier User,Entitlement Fulfiller User,Entitlement Approver Role,Entitlement Certifier Role,Entitlement Fulfiller Role,Entitlement Number
 ALPHA_SERVER_DB,Alpha server database,This containing access credentials to alpha,TRUE,TRUE,FALSE,CKENT,CKENT,CKENT,Entitlement Approver Role,Entitlement Certifier Role,Entitlement Fulfiller Role,1
 BETA_SERVER_DB,Beta server database,Provides credentials for beta environments,TRUE,TRUE,FALSE,AGREEN,BWHITE,DGRAY,Entitlement Approver Role,Entitlement Certifier Role,Entitlement Fulfiller Role,2
 ALPHA_ADMIN,Alpha admin,Admin role for Alpha,TRUE,TRUE,TRUE,PBULE,CKENT,PBULE,Entitlement Approver Role,Entitlement Certifier Role,Entitlement Fulfiller Role,1
