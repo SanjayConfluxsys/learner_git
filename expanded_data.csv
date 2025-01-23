@@ -1,5 +1,5 @@
 # Account Information
-Account Id,Account Login,First Name,Last Name,Email,Status
+Account Id,Account Login,Name,Email,Status
 Jack lumber,Jack lumber,Jack,Lumber,Jlumber@gmail.com,Active
 Alice Green,Alice Green,Alice,Green,agreen@example.com,Active
 Bob White,Bob White,Bob,White,bwhite@example.com,Suspended
