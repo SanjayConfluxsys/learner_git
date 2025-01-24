@@ -1,0 +1,11 @@
+roleName,entitlementDisplayName,entitlementDescription,privilegedEntitlement,requestable,certifiable,entitlementNumber
+Developer,Code Deployment,Privileges for code deployment,true,true,true,201
+Manager,Team Management,Privileges for managing teams,false,true,false,202
+Administrator,Admin Access,Full system administrative privileges,true,true,true,203
+Analyst,Data Analysis,Access to analytical tools,false,true,false,204
+HR Manager,HR Management,Manage employee records,false,true,false,205
+Support Specialist,Customer Support,Assist customers with issues,false,true,false,206
+Engineer,Product Development,Access to product development tools,true,true,true,207
+Marketing Specialist,Ad Campaigns,Manage marketing campaigns,false,true,false,208
+Legal Counsel,Legal Advice,Provide legal consultation,false,true,false,209
+Sales Manager,Sales Operations,Oversee sales activities,false,true,false,210
