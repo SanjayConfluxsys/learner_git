@@ -1,0 +1,11 @@
+groupName,entitlementDisplayName,entitlementDescription,privilegedEntitlement,requestable,certifiable,entitlementNumber
+IT Department,Access to IDE,Access to Visual Studio Code,true,true,true,101
+HR,Access to HR Software,Access to HR management tools,false,true,false,102
+Finance,Access to Financial Tools,Access to accounting software,false,true,false,103
+Engineering,Access to Engineering Resources,Access to technical documentation,true,true,true,104
+Marketing,Access to Marketing Tools,Access to advertising software,false,true,false,105
+Legal,Access to Legal Documents,Access to legal resources,false,true,false,106
+Operations,Access to Operations Software,Access to operations management tools,true,true,true,107
+Support,Access to Support System,Access to helpdesk software,true,true,true,108
+Sales,Access to Sales Tools,Access to CRM and sales tools,false,true,false,109
+Security,Access to Security Tools,Access to security monitoring software,true,true,true,110
