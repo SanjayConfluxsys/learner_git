@@ -1,0 +1,61 @@
+{
+  "query": "CREATE (developer:Role {name: 'Developer', description: 'Responsible for writing, reviewing, and maintaining code for software applications.'}), " +
+           "(uiDeveloper:Role {name: 'UI Developer', description: 'Focuses on designing and implementing user interfaces for web and mobile applications.'}), " +
+           "(qaEngineer:Role {name: 'QA Engineer', description: 'Ensures the quality of software by testing functionality, performance, and security.'}), " +
+           "(backendEngineer:Role {name: 'Backend Engineer', description: 'Develops server-side logic, APIs, and database interactions to support applications.'}), " +
+           "(dataScientist:Role {name: 'Data Scientist', description: 'Analyzes data, builds predictive models, and provides insights to improve business decisions.'}), " +
+           "(mlEngineer:Role {name: 'ML Engineer', description: 'Develops and deploys machine learning models and optimizes AI-driven applications.'}), " +
+           "(cloudArchitect:Role {name: 'Cloud Architect', description: 'Designs and manages cloud infrastructure, ensuring scalability and security.'}), " +
+           "(securityAnalyst:Role {name: 'Security Analyst', description: 'Monitors security threats, conducts audits, and implements cybersecurity policies.'}), " +
+           "(dbAdmin:Role {name: 'Database Administrator', description: 'Manages databases, optimizes queries, and ensures data integrity and security.'}), " +
+           "(productManager:Role {name: 'Product Manager', description: 'Defines product vision, roadmap, and strategy while working closely with stakeholders.'}), " +
+           "(accessCodebase:Entitlement {name: 'Access Codebase', description: 'Allows developers to access and modify the project’s source code.'}), " +
+           "(mergedPRs:Entitlement {name: 'Merged PRs', description: 'Grants permission to review and merge pull requests into the main branch.'}), " +
+           "(deployToStaging:Entitlement {name: 'Deploy to Staging', description: 'Allows deployment of code to the staging environment for testing.'}), " +
+           "(modifyUIComponents:Entitlement {name: 'Modify UI Components', description: 'Allows UI developers to update and create front-end components.'}), " +
+           "(accessDesignSystem:Entitlement {name: 'Access Design System', description: 'Provides access to the organization’s design system and style guidelines.'}), " +
+           "(submitUIBugReports:Entitlement {name: 'Submit UI Bug Reports', description: 'Grants permission to log and track UI-related issues in the system.'}), " +
+           "(executeTestCases:Entitlement {name: 'Execute Test Cases', description: 'Allows execution of automated and manual test cases.'}), " +
+           "(logDefects:Entitlement {name: 'Log Defects', description: 'Enables the logging and tracking of software defects.'}), " +
+           "(accessTestReports:Entitlement {name: 'Access Test Reports', description: 'Provides access to detailed reports on test execution and results.'}), " +
+           "(modifyAPIEndpoints:Entitlement {name: 'Modify API Endpoints', description: 'Grants permission to update and create API endpoints.'}), " +
+           "(accessDatabase:Entitlement {name: 'Access Database', description: 'Allows direct read and write access to the project’s database.'}), " +
+           "(optimizePerformance:Entitlement {name: 'Optimize Performance', description: 'Enables engineers to analyze and improve backend performance.'}), " +
+           "(accessDatasets:Entitlement {name: 'Access Datasets', description: 'Provides access to raw and processed datasets for analysis.'}), " +
+           "(runExperiments:Entitlement {name: 'Run Experiments', description: 'Allows running of experiments and A/B testing on data models.'}), " +
+           "(deployModels:Entitlement {name: 'Deploy Models', description: 'Grants permission to deploy machine learning models into production.'}), " +
+           "(trainModels:Entitlement {name: 'Train Models', description: 'Allows engineers to train machine learning models using datasets.'}), " +
+           "(deployMLPipelines:Entitlement {name: 'Deploy ML Pipelines', description: 'Grants permission to deploy automated ML workflows.'}), " +
+           "(monitorModelPerformance:Entitlement {name: 'Monitor Model Performance', description: 'Enables monitoring of deployed models for performance and drift.'}), " +
+           "(manageCloudInfrastructure:Entitlement {name: 'Manage Cloud Infrastructure', description: 'Grants access to manage cloud-based servers and services.'}), " +
+           "(optimizeCloudCosts:Entitlement {name: 'Optimize Cloud Costs', description: 'Allows for cost analysis and optimization of cloud resources.'}), " +
+           "(setSecurityPolicies:Entitlement {name: 'Set Security Policies', description: 'Enables the creation and enforcement of cloud security policies.'}), " +
+           "(conductSecurityAudits:Entitlement {name: 'Conduct Security Audits', description: 'Allows execution of security assessments and penetration tests.'}), " +
+           "(monitorThreats:Entitlement {name: 'Monitor Threats', description: 'Provides access to threat intelligence and security logs.'}), " +
+           "(implementSecurityControls:Entitlement {name: 'Implement Security Controls', description: 'Grants permission to apply security patches and configurations.'}), " +
+           "(manageDatabaseSchema:Entitlement {name: 'Manage Database Schema', description: 'Allows modifications to database structure and schema.'}), " +
+           "(optimizeQueries:Entitlement {name: 'Optimize Queries', description: 'Grants access to improve and optimize SQL queries.'}), " +
+           "(backupRestoreData:Entitlement {name: 'Backup & Restore Data', description: 'Provides permission to perform database backups and restores.'}), " +
+           "(defineProductRoadmap:Entitlement {name: 'Define Product Roadmap', description: 'Grants access to set and update the product roadmap.'}), " +
+           "(prioritizeFeatures:Entitlement {name: 'Prioritize Features', description: 'Allows prioritization of new features based on business needs.'}), " +
+           "(gatherCustomerFeedback:Entitlement {name: 'Gather Customer Feedback', description: 'Provides access to customer insights and feedback collection.'}), " +
+           "(alice:User {name: 'Alice', description: 'Senior Developer'}), " +
+           "(bob:User {name: 'Bob', description: 'QA Lead'}), " +
+           "(charlie:User {name: 'Charlie', description: 'Cloud Admin'}), " +
+           "(david:User {name: 'David', description: 'Product Manager'}), " +
+           "(eve:User {name: 'Eve', description: 'Security Specialist'}), " +
+           "(alice)-[:OWNS_ROLE]->(developer), " +
+           "(alice)-[:OWNS_ROLE]->(backendEngineer), " +
+           "(bob)-[:OWNS_ROLE]->(qaEngineer), " +
+           "(charlie)-[:OWNS_ROLE]->(cloudArchitect), " +
+           "(david)-[:OWNS_ROLE]->(productManager), " +
+           "(eve)-[:OWNS_ROLE]->(securityAnalyst), " +
+           "(alice)-[:CAN_GRANT]->(accessCodebase), " +
+           "(alice)-[:CAN_GRANT]->(mergedPRs), " +
+           "(bob)-[:CAN_GRANT]->(executeTestCases), " +
+           "(bob)-[:CAN_GRANT]->(logDefects), " +
+           "(charlie)-[:CAN_GRANT]->(manageCloudInfrastructure), " +
+           "(charlie)-[:CAN_GRANT]->(optimizeCloudCosts), " +
+           "(eve)-[:CAN_GRANT]->(conductSecurityAudits), " +
+           "(eve)-[:CAN_GRANT]->(monitorThreats)"
+}
